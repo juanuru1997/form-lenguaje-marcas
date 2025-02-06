@@ -1,0 +1,336 @@
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #a7c4fb, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Contenedor del formulario */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 360px;
+    margin-top: 30px;
+    max-height: 85vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Título */
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1e3c72;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Contenedor de inputs */
+.input-container {
+    position: relative;
+    width: 90%;
+    margin-bottom: 15px; /* Reducido para alineación */
+}
+
+/* Inputs y selects */
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 12px;
+    padding-right: 12px; /* Ajustado para evitar margen innecesario */
+    padding-left: 12px;  /* Asegurar simetría */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Íconos de validación */
+.input-container .icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Color verde cuando el campo es válido */
+.input-container.valid input,
+.input-container.valid select {
+    border-color: #28a745;
+}
+
+.input-container.valid .icon {
+    color: #28a745;
+    display: inline-block;
+}
+
+.input-container.valid .icon::before {
+    content: "✔";
+}
+
+/* Color rojo cuando el campo es inválido */
+.input-container.invalid input,
+.input-container.invalid select {
+    border-color: #dc3545;
+}
+
+.input-container.invalid .icon {
+    color: #dc3545;
+    display: inline-block;
+}
+
+
+/* Mensajes de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Botón moderno */
+button {
+    background: #2a5298;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #1e3c72;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(30, 60, 114, 0.4);
+}
+/* Estilos del encabezado */
+header {
+    background: #333; /* Fondo oscuro */
+    padding: 15px 0;
+    width: 100%;
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilos del menú de navegación */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+/* Lista del menú */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Espaciado entre los elementos */
+}
+
+/* Enlaces del menú */
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Línea animada debajo del enlace */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #ffcc00; /* Color amarillo brillante */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ffcc00; /* Cambia el color del texto */
+}
+
+/* Expande la línea al hacer hover */
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+    left: 0;
+}
+/* Contenedor principal */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh; /* Ajuste para que todo quede bien distribuido */
+    padding: 20px;
+}
+
+/* Imagen de éxito */
+.success-image {
+    max-width: 180px;  /* Reducimos el tamaño */
+    height: auto;  /* Mantiene la proporción */
+    margin-bottom: 15px; /* Espaciado con el texto */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #a7c4fb, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal del login */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+.login-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1e3c72;
+}
+
+/* Grupo de cada input */
+.input-group {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos de los inputs */
+.login-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al hacer foco en el input */
+.login-input:focus {
+    border-color: #2a5298;
+    outline: none;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(42, 82, 152, 0.3);
+}
+
+/* Botón de inicio de sesión */
+.login-button {
+    background: #2a5298;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background: #1e3c72;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(30, 60, 114, 0.4);
+}
