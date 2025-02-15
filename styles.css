@@ -160,10 +160,10 @@ button:hover {
 }
 /* Estilos del encabezado */
 header {
-    background: #333; /* Fondo oscuro */
+    background: #333; 
     padding: 15px 0;
     width: 100%;
-    position: fixed; /* Fija el menú en la parte superior */
+    position: fixed; 
     top: 0;
     left: 0;
     z-index: 1000;
@@ -181,13 +181,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 30px; /* Espaciado entre los elementos */
+    gap: 30px; 
 }
 
 /* Enlaces del menú */
 nav ul li a {
     text-decoration: none;
-    color: white; /* Texto blanco */
+    color: white; 
     font-size: 16px;
     font-weight: bold;
     padding: 10px 15px;
@@ -203,14 +203,14 @@ nav ul li a::after {
     bottom: -5px;
     width: 0;
     height: 3px;
-    background: #ffcc00; /* Color amarillo brillante */
+    background: #ffcc00; 
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 /* Efecto al pasar el mouse */
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ffcc00; /* Cambia el color del texto */
+    color: #ffcc00; 
 }
 
 /* Expande la línea al hacer hover */
@@ -226,15 +226,15 @@ nav ul li a.active::after {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 80vh; /* Ajuste para que todo quede bien distribuido */
+    height: 80vh; 
     padding: 20px;
 }
 
 /* Imagen de éxito */
 .success-image {
-    max-width: 180px;  /* Reducimos el tamaño */
-    height: auto;  /* Mantiene la proporción */
-    margin-bottom: 15px; /* Espaciado con el texto */
+    max-width: 180px;  
+    height: auto;  
+    margin-bottom: 15px; 
 }
 
 /* Ajustes responsivos */
